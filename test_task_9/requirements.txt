@@ -1,0 +1,10 @@
+alembic==1.13.1
+asyncpg==0.29.0
+Faker==21.0.0
+fastapi==0.108.0
+orjson==3.9.10
+psycopg2-binary==2.9.9
+pydantic==2.5.3
+pydantic-settings==2.1.0
+SQLAlchemy==2.0.23
+uvicorn==0.25.0

@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  postgres:
+    image: postgres:13
+    container_name: postgres
+    restart: on-failure
+    ports:
+      - 5432:5432
+    env_file:
+      - .env.db_example
+
+
+  app:
+    build: ./
+    image: app
+    container_name: app_bank_system
+    restart: on-failure
+    ports:
+      - 8000:8000
+    volumes:
+      - ./src:/opt/app/src
+    env_file:
+      - .env.app_example
+      - .env.db_example
+    depends_on:
+      - postgres
+
+
+networks:
+  default:
+    name: bank_system
